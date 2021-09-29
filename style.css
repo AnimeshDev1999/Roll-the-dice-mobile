@@ -1,0 +1,201 @@
+@media only screen and (max-width: 700px) {
+  * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #333;
+  }
+  body {
+    background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+  }
+  .hidden {
+    display: none !important;
+  }
+  .card-default {
+    background-color: rgba(255, 255, 255, 0.486);
+    height: 40vh;
+    width: 100vw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  #gap {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  img {
+    position: relative;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.486);
+  }
+  #roll {
+    position: absolute;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 1.5rem;
+    border: none;
+    background-color: rgba(51, 51, 51, 0);
+    cursor: pointer;
+  }
+  .total {
+    border-radius: 0.8rem;
+    width: 8rem;
+    background-color: #00c8ff44;
+  }
+  .total h1 {
+    font-size: 1.5rem;
+  }
+  .card-default h1 {
+    font-size: 2rem;
+  }
+  .card-default h2 {
+    font-size: 6rem;
+  }
+  .btn {
+    border: none;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  .active {
+    background-color: rgba(255, 255, 255, 0.753);
+  }
+  #how-to {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(51, 51, 51, 0);
+  }
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(68, 68, 68, 0.514);
+  }
+  #warning {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 15rem;
+    width: 30rem;
+    z-index: 5;
+    background-color: rgb(255, 241, 214);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2rem;
+  }
+  #inst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 100vw;
+    z-index: 5;
+    background-color: rgb(255, 241, 214);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2rem;
+    overflow: auto;
+  }
+  #inst h1 {
+    position: relative;
+    font-size: 2rem;
+  }
+  #inst ul {
+    height: 18rem;
+    padding: 0 4rem;
+    font-size: 1.5rem;
+    overflow: auto;
+  }
+  #inst li {
+    line-height: 2rem;
+  }
+  #range-set {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 8rem;
+    width: 15rem;
+    align-items: center;
+    border-radius: 2rem;
+  }
+  #close {
+    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+    position: absolute;
+    background-color: inherit;
+    border: none;
+  }
+  .btn-popup {
+    border: 2px solid #888;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  #range-set input {
+    height: 2rem;
+    border: 2px solid #888;
+    text-align: center;
+    font-size: 1rem;
+  }
+  #popup-rename {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 15rem;
+    width: 30rem;
+    z-index: 5;
+    background-color: rgb(255, 241, 214);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2rem;
+  }
+  .btn-rename {
+    background-color: #00c8ff44;
+    cursor: pointer;
+    border-radius: 5rem;
+  }
+
+  #popup-rename input {
+    width: 15rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: none;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  #main-heading {
+    height: 10vh;
+    font-size: 2.5rem;
+    margin-left: 0.5rem;
+    filter: drop-shadow(2px 2px 2px black);
+    overflow: auto;
+  }
+}

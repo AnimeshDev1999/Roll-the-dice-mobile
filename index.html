@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roll the Dice Mobile 🎲</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1 id="main-heading">Roll The Dice.</h1>
+    <div id="overlay" class="hidden" onclick="popupClose()"></div>
+    <div id="warning" class="hidden">
+      <h1>Start new game</h1>
+      <h2>Are you sure?</h2>
+      <div>
+        <button id="yes" class="btn-popup" onclick="playAgain()">Yes</button>
+        <button id="no" class="btn-popup" onclick="popupClose()">No</button>
+      </div>
+    </div>
+    <div id="inst" class="hidden">
+      <h1>How to play?</h1>
+      <ul>
+        <li>
+          The current active player is the one with solid white background.
+        </li>
+        <br />
+        <li>Start by pressing "Roll the dice" button.</li>
+        <br />
+        <li>
+          You have to 'pass' before you roll a 1 in order to make progress in
+          the game.
+        </li>
+        <br />
+        <li>
+          The dice will give a random number that will be added to active
+          player's current score.
+        </li>
+        <br />
+        <li>The active player may roll multiple dice or may pass the turn.</li>
+        <br />
+        <li>
+          If a player rolls 1 then all the 'current points' will be deducted and
+          the turn will be passed to other player.
+        </li>
+        <br />
+        <li>
+          If the player chooses to 'pass' then the 'current points' will be
+          added to the player's total points and the chance will be passed on to
+          the other player.
+        </li>
+        <br />
+        <li>First player to reach the range limit will win.</li>
+        <br />
+        <li>You may set the custom limit from the controls below.</li>
+      </ul>
+      <div id="range-set">
+        <input
+          type="number"
+          min="1"
+          max="500"
+          placeholder="Input range"
+          id="range-field"
+        />
+        <button id="range-button" class="btn-popup" onclick="changeRange()">
+          Set range
+        </button>
+      </div>
+      <button id="close" onclick="popupClose()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          fill="#000000"
+          viewBox="0 0 256 256"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <circle
+            cx="128"
+            cy="128"
+            r="96"
+            fill="none"
+            stroke="#000000"
+            stroke-miterlimit="10"
+            stroke-width="16"
+          ></circle>
+          <line
+            x1="160"
+            y1="96"
+            x2="96"
+            y2="160"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <line
+            x1="160"
+            y1="160"
+            x2="96"
+            y2="96"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+        </svg>
+      </button>
+    </div>
+    <div id="popup-rename" class="hidden">
+      <h1>Enter your name</h1>
+      <input type="text" id="name-field" />
+      <button id="re-assign-btn" class="btn-popup" onclick="changeName()">
+        Rename
+      </button>
+    </div>
+    <button id="how-to" class="btn" onclick="instPopupOpen()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2rem"
+        height="2rem"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <rect width="256" height="256" fill="none"></rect>
+        <circle
+          cx="128"
+          cy="128"
+          r="96"
+          fill="none"
+          stroke="#000000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        ></circle>
+        <circle cx="128" cy="180" r="12"></circle>
+        <path
+          d="M127.9995,144.0045v-8a28,28,0,1,0-28-28"
+          fill="none"
+          stroke="#000000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="16"
+        ></path>
+      </svg>
+    </button>
+    <section id="card-1" class="card-default active">
+      <h1>
+        <p id="name1">Player 1</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="#000000"
+          viewBox="0 0 256 256"
+          id="rename1"
+          class="btn-rename"
+          onclick="renamePopupOpen(); currentInput(1)"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <path
+            d="M92.68629,216H48a8,8,0,0,1-8-8V163.31371a8,8,0,0,1,2.34315-5.65686l120-120a8,8,0,0,1,11.3137,0l44.6863,44.6863a8,8,0,0,1,0,11.3137l-120,120A8,8,0,0,1,92.68629,216Z"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></path>
+          <line
+            x1="136"
+            y1="64"
+            x2="192"
+            y2="120"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <line
+            x1="95.48882"
+            y1="215.48882"
+            x2="40.5088"
+            y2="160.5088"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+        </svg>
+      </h1>
+      <h2 id="current-score1">0</h2>
+      <div class="total">
+        <h1>Total:</h1>
+        <h1 id="total-score1">0</h1>
+      </div>
+    </section>
+    <div id="gap">
+      <button id="new-game" class="btn" onclick="warnPopupOpen()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2rem"
+          height="2rem"
+          fill="#000000"
+          viewBox="0 0 256 256"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <polyline
+            points="79.833 99.716 31.833 99.716 31.833 51.716"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></polyline>
+          <path
+            d="M190.2254,65.7746a88,88,0,0,0-124.4508,0L31.83348,99.71573"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></path>
+          <polyline
+            points="176.167 156.284 224.167 156.284 224.167 204.284"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></polyline>
+          <path
+            d="M65.7746,190.2254a88,88,0,0,0,124.4508,0l33.94112-33.94113"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></path>
+        </svg>
+      </button>
+      <img id="the-dice" src="./img/1.png" alt="a die" />
+      <button id="roll" onclick="rolling()"></button>
+      <button id="pass" class="btn" onclick="setActivePlayer()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="2rem"
+          height="2rem"
+          fill="#000000"
+          viewBox="0 0 256 256"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <rect
+            x="40"
+            y="40"
+            width="176"
+            height="176"
+            rx="8"
+            stroke-width="16"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+          ></rect>
+          <polyline
+            points="94.059 118.059 128 152 161.941 118.059"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></polyline>
+          <line
+            x1="128"
+            y1="72"
+            x2="128"
+            y2="152"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <path
+            d="M39.99414,160H76.68043a8,8,0,0,1,5.65686,2.34315l19.3137,19.3137A8,8,0,0,0,107.30785,184h41.37258a8,8,0,0,0,5.65686-2.34315l19.3137-19.3137A8,8,0,0,1,179.30785,160h36.68629"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <section id="card-2" class="card-default">
+      <h1>
+        <p id="name2">Player 2</p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="#000000"
+          viewBox="0 0 256 256"
+          id="rename2"
+          class="btn-rename"
+          onclick="renamePopupOpen(); currentInput(2)"
+        >
+          <rect width="256" height="256" fill="none"></rect>
+          <path
+            d="M92.68629,216H48a8,8,0,0,1-8-8V163.31371a8,8,0,0,1,2.34315-5.65686l120-120a8,8,0,0,1,11.3137,0l44.6863,44.6863a8,8,0,0,1,0,11.3137l-120,120A8,8,0,0,1,92.68629,216Z"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></path>
+          <line
+            x1="136"
+            y1="64"
+            x2="192"
+            y2="120"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+          <line
+            x1="95.48882"
+            y1="215.48882"
+            x2="40.5088"
+            y2="160.5088"
+            fill="none"
+            stroke="#000000"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="16"
+          ></line>
+        </svg>
+      </h1>
+      <h2 id="current-score2">0</h2>
+      <div class="total">
+        <h1>Total:</h1>
+        <h1 id="total-score2">0</h1>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>
