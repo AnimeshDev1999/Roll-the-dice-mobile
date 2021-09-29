@@ -91,7 +91,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     height: 15rem;
-    width: 30rem;
+    width: 20rem;
     z-index: 5;
     background-color: rgb(255, 241, 214);
     display: flex;
@@ -168,7 +168,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     height: 15rem;
-    width: 30rem;
+    width: 20rem;
     z-index: 5;
     background-color: rgb(255, 241, 214);
     display: flex;
